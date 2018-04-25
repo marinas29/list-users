@@ -5,8 +5,12 @@
 </template>
 
 <script>
+    import Services from '_services/index.js'
+
     export default {
-        name: 'home'
+        mounted () {
+            Services.getAllUsers()
+        }
     }
 </script>
 
