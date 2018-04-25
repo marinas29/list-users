@@ -100,6 +100,10 @@ module.exports = {
     performance: {
         hints: false
     },
+    node: {
+        fs: 'empty',
+        module: 'empty'
+    },
     devtool: '#eval-source-map'
 }
 

@@ -11,9 +11,9 @@
 </script>
 
 <style lang="scss" scoped>
-    @import '~_sass_config/vars';
+    @import '~_sass/config/vars';
 
-    .login {
+    .home {
         position: relative;
         height: 100%;
     }
