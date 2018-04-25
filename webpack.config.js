@@ -1,5 +1,8 @@
 const path = require('path')
     , webpack = require('webpack')
+    , src = path.join(__dirname, 'src')
+    , tests = path.join(__dirname, 'tests')
+    , app = path.join(src, 'app')
 
 module.exports = {
     entry: './src/main.js',
@@ -77,6 +80,14 @@ module.exports = {
     },
     resolve: {
         alias: {
+            _app: app,
+            _src: src,
+            _tests: tests,
+            _components: path.join(app, 'components'),
+            _services: path.join(app, 'services'),
+            _views: path.join(app, 'views'),
+            _assets: path.join(app, 'assets'),
+            _sass: path.join(src, 'assets', 'scss'),
             'vue$': 'vue/dist/vue.esm.js'
         },
         extensions: ['*', '.js', '.vue', '.json']

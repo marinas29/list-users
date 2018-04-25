@@ -1,13 +1,15 @@
 import { expect } from 'chai'
 import { shallow } from '@vue/test-utils'
-import HelloWorld from '@/components/HelloWorld.vue'
+import Home from '_views/Home.vue'
 
-describe('HelloWorld.vue', () => {
-  it('renders props.msg when passed', () => {
-    const msg = 'new message'
-    const wrapper = shallow(HelloWorld, {
-      propsData: { msg }
+describe('Home.vue', () => {
+    it('Home test', () => {
+        const wrapper = shallow(Home)
+        expect(wrapper.find('div').text()).contains('ABCD')
     })
-    expect(wrapper.text()).to.include(msg)
-  })
+
+    it('Home test 2', () => {
+        const wrapper = shallow(Home)
+        expect(wrapper.find('div').text()).contains('Home')
+    })
 })
