@@ -6,28 +6,28 @@ export default {
         const url = `${baseUrl}users`
 
         return fetch(url)
-            .then(response => console.log(response.json()))
+            .then(response => response.json())
             .catch(error => error.json())
     },
 
-    getUser (name) {
-        const url = `${baseUrl}users/${name}`
+    getUser (user) {
+        const url = `${baseUrl}users/${user}`
 
         return fetch(url)
             .then(response => response.json())
             .catch(error => error.json())
     },
 
-    getRepos (user) {
-        const url = `${baseUrl}${user.login}/repos`
+    getRepositories (user) {
+        const url = `${baseUrl}users/${user}/repos`
 
         return fetch(url)
             .then(response => response.json())
             .catch(error => error.json())
     },
 
-    getInfoRepos (repository) {
-        const url = `${baseUrl}repos/${user.login}/${repository}`
+    getInfoRepository (user, repository) {
+        const url = `${baseUrl}repos/${user}/${repository}`
 
         return fetch(url)
             .then(response => response.json())
