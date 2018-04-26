@@ -6,7 +6,7 @@ export default {
         const url = `${baseUrl}users`
 
         return fetch(url)
-            .then(response => console.log(response.json()))
+            .then(response => response.json())
             .catch(error => error.json())
     },
 
