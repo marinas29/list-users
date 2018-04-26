@@ -1,6 +1,6 @@
 <template>
     <div class="list-users">
-        <user v-for="(user, index) in users" :key="index" :users="users"></user>
+        <user v-for="(user, index) in users" :key="index" :user="user"></user>
     </div>
 </template>
 
@@ -24,9 +24,14 @@
     @import '~_sass/config/vars';
 
     .list-users {
+        max-width: 80%;
         margin: 0 auto;
-        max-width: 1100px;
 
-        border: 1px solid #076585;
+        width: 100%;
+
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
     }
 </style>

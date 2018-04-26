@@ -1,6 +1,6 @@
 <template>
     <div class="home-page">
-        <h1>{{ title }}</h1>
+        <h1 class="home-page__title">{{ title }}</h1>
         <list-users :users="users"></list-users>
     </div>
 </template>
@@ -33,9 +33,21 @@
     .home-page {
         position: relative;
         min-height: 100vh;
+        padding: 20px 0;
 
         background: $color-blue--base;
         background: -webkit-linear-gradient(to right, $color-white--base, $color-blue--base);
         background: linear-gradient(to right, $color-white--base, $color-blue--base);
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+
+        &__title {
+            text-transform: uppercase;
+            border-bottom: 2px solid $color-blue--base;
+        }
     }
 </style>
