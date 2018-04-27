@@ -1,17 +1,24 @@
 <template>
     <div class="modal" :class="{ 'modal--active': isOpen }">
         <div class="modal__content">
-            <h2 class="modal__content__name">{{ user.name }}</h2>
-            <p class="modal__content__email">{{ user.email }}</p>
-            <p class="modal__content__location">{{ user.location }}</p>
+            <div class="modal__content__info info">
+                <h2 class="info__name" v-if="user.name">{{ user.name }}</h2>
+                <p class="info__email" v-if="user.email">{{ user.email }}</p>
+                <p class="info__location" v-if="user.location">{{ user.location }}</p>
+            </div>
+            <template v-for="(repository, r) in repositories">
+                <accordion :item="repository" :key="r"></accordion>
+            </template>
         </div>
     </div>
 </template>
 
 <script>
+    import Accordion from './Accordion.vue'
 
     export default {
         name: 'modal',
+        components: { Accordion },
         props: {
             isOpen: { type: Boolean },
             repositories: { type: Array },
