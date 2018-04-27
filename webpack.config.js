@@ -83,6 +83,7 @@ module.exports = {
             _app: app,
             _src: src,
             _tests: tests,
+            _common: path.join(app, 'common'),
             _components: path.join(app, 'components'),
             _services: path.join(app, 'services'),
             _views: path.join(app, 'views'),

@@ -1,14 +1,19 @@
 <template>
     <div class="user" @click="getUserInfo(user.login)">
-        <img :src="user.avatar_url" alt="user.login" class="user__image" />
+        <img :src="user.avatar_url" :alt="user.login" class="user__image" />
         <h2 class="user__name"> {{ user.login }} </h2>
+
+        <modal :isOpen="modalOpen" :repositories="repositories" :user="userInfo" ></modal>
     </div>
 </template>
 
 <script>
     import Services from '_services/index.js'
+    import Modal from '_common/Modal.vue'
 
     export default {
+        name: 'user',
+        components: { Modal },
         props: {
             user: {
                 type: Object,
@@ -19,7 +24,8 @@
             return {
                 userInfo: {},
                 repositories: [],
-                repositoryInfo: {}
+                repositoryInfo: {},
+                modalOpen: false
             }
         },
         methods: {
@@ -27,6 +33,7 @@
                 return Services.getUser(user).then(response => {
                     this.userInfo = response
                     this.getRepositories(user)
+                    this.modalOpen = true
                 })
             },
             getRepositories (user) {
