@@ -8,7 +8,7 @@
     "test": "cross-env BABEL_ENV=test karma start --single-run"
   },
   "dependencies": {
-    "@vue/cli-service": "^3.8.0",
+    "@vue/cli-service": "^5.0.8",
     "vue": "^2.6.10"
   },
   "devDependencies": {
